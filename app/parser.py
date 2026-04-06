@@ -38,5 +38,16 @@ Text:
     }
 
     response = requests.post(INVOKE_URL, headers=headers, json=payload)
-
-    return response.json()
+    res_data = response.json()
+    
+    if "choices" in res_data:
+        import json
+        content = res_data["choices"][0]["message"]["content"]
+        # Clean markdown code blocks if the model adds them
+        content = content.replace("```json", "").replace("```", "").strip()
+        try:
+            return json.loads(content)
+        except Exception:
+            return {"raw_text": content}
+            
+    return res_data
