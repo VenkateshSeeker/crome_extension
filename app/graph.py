@@ -1,9 +1,11 @@
 from langgraph.graph import StateGraph
 from app.parser import extract_filters
+from typing import TypedDict
 
 
-class FilterState(dict):
-    pass
+class FilterState(TypedDict):
+    query: str
+    filters: dict
 
 
 def parse_node(state):
