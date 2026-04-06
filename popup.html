@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="glass-panel">
+        <div class="header">
+            <div class="logo">✦</div>
+            <h2>AI Assistant</h2>
+        </div>
+        
+        <p class="subtitle">Natural language shopping filters</p>
+
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="query" 
+                placeholder="e.g. black nike shoes under ₹3000" 
+                autocomplete="off"
+            />
+            <button id="searchBtn">Apply</button>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <span>Analyzing request...</span>
+        </div>
+
+        <div id="resultContainer" class="hidden">
+            <div class="result-header">Extracted Context:</div>
+            <pre id="result"></pre>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Antigravity Shopping Assistant",
+  "version": "1.0",
+  "description": "AI-powered shopping assistant combining natural language parsing and intelligent filtering for e-commerce.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "https://www.flipkart.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Filter Engine"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.flipkart.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
