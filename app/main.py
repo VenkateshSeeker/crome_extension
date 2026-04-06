@@ -17,6 +17,11 @@ class QueryInput(BaseModel):
     query: str
 
 
+@app.get("/ping")
+def ping_server():
+    return {"status": "alive"}
+
+
 @app.post("/extract_filters")
 def extract_filters_api(input_data: QueryInput):
 
