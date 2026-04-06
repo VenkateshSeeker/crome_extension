@@ -5,7 +5,7 @@
   "description": "AI-powered shopping assistant combining natural language parsing and intelligent filtering for e-commerce.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": [
-    "http://127.0.0.1:8000/*",
+    "https://crome-extension-o76y.onrender.com/*",
     "https://www.flipkart.com/*"
   ],
   "action": {
